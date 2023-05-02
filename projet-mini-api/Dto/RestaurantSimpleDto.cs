@@ -6,6 +6,11 @@
     public class RestaurantSimpleDto
     {
         /// <summary>
+        /// Id utilisé comme identifiant primaire par EntityFramework Core.
+        /// </summary>
+        public int Id { get; set; }
+
+        /// <summary>
         /// Nom du restaurant.
         /// </summary>
         public string Name { get; set; } = string.Empty;

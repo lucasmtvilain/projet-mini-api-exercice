@@ -64,8 +64,13 @@ namespace projet_mini_api.Services.RestaurantServices
             Restaurant restaurantDb = null;
             try
             {
+                // Convertion DTO automatique.
                 restaurantDb = _mapper.Map<Restaurant>(restaurantToSaveDto);
+
+                // Ajout du restaurant au context.
                 _context.Restaurants.Add(restaurantDb);
+
+                // Sauvegarde du context.
                 await _context.SaveChangesAsync();
             }
             catch (Exception ex)
